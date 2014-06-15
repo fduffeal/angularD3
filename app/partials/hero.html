@@ -2,6 +2,9 @@
 
 <div>{{ data.name }}</div>
 
+<div ng-repeat="(place,data) in data.items">
+    {{ place }} : <div img-item=" data "></div>
+</div>
 
 <ul>
     <li ng-repeat="skill in skillsActif">

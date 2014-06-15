@@ -15,4 +15,17 @@ angular.module('myApp.directives', []).
             templateUrl : "partials/formBattleNet.html"
         }
     }])
+    .directive('imgItem',[function(){
+
+        return {
+            scope: {
+                myitem: '=imgItem'
+            },
+            link: function(scope,elm,attrs){
+                scope.myitem.icon = 'http://media.blizzard.com/d3/icons/items/large/'+scope.myitem.icon+'.png';
+            },
+            restrict: 'EA',
+            templateUrl : "partials/item.html"
+        }
+    }])
 ;

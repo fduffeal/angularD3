@@ -1,0 +1,8 @@
+BattleTag : <input type="text" ng-model="battleTagName" ng-trim="true"/>
+BattleTag Id : <input type="text" ng-model="battleTagId" ng-trim="true"/>
+
+<a ng-show='battleTagName && battleTagId' ng-href="#/{{battleTagName}}/{{battleTagId}}">
+    Voir les héros de {{battleTagName}}-{{battleTagId}}
+</a>
+
+<hr/>

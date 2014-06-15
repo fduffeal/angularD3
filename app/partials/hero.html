@@ -1,0 +1,18 @@
+<span formbattlenet></span>
+
+<div>{{ data.name }}</div>
+
+
+<ul>
+    <li ng-repeat="skill in skillsActif">
+        {{ skill.skill.name }} | {{ skill.rune.name }}
+    </li>
+</ul>
+
+<ul>
+    <li ng-repeat="(stat,value) in stats">
+        {{ stat }} : {{ value }}
+    </li>
+</ul>
+
+

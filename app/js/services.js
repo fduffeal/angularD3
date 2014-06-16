@@ -15,7 +15,7 @@ app.service('d3Api',['$http',
         this.get = function(battletagName,battletagCode,heroId){
 
             var host = 'eu.battle.net';
-            var url = 'http://88.191.122.183/angularD3/proxy.php?url=http://'+ host + "/api/d3/profile/" + battletagName + "-" + battletagCode +"/hero/" + heroId;
+            var url = '/angularD3/proxy.php?url=http://'+ host + "/api/d3/profile/" + battletagName + "-" + battletagCode +"/hero/" + heroId;
 
             var promise = $http({
                 method: 'GET',
@@ -29,7 +29,7 @@ app.service('d3Api',['$http',
 
         this.getProfil = function(battletagName,battletagCode){
             var host = 'eu.battle.net';
-            var url = 'http://88.191.122.183/angularD3/proxy.php?url=http://'+ host + "/api/d3/profile/" + battletagName + "-" + battletagCode + '/';
+            var url = '/angularD3/proxy.php?url=http://'+ host + "/api/d3/profile/" + battletagName + "-" + battletagCode + '/';
 
             var promise = $http({
                 method: 'GET',

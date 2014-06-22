@@ -28,4 +28,18 @@ angular.module('myApp.directives', []).
             templateUrl : "partials/item.html"
         }
     }])
+    .directive('playerTwitch',[function(){
+
+        return {
+            scope: {
+                myitem: '=playerTwitch'
+            },
+            link: function(scope,elm,attrs){
+                scope.url = "hostname=www.twitch.tv&channel="+scope.myitem.stream.channel.name+"&auto_play=false&start_volume=25";
+                scope.streamName = scope.myitem.stream.channel.name;
+            },
+            restrict: 'EA',
+            templateUrl : "partials/playerTwitch.html"
+        }
+    }])
 ;

@@ -22,5 +22,11 @@ angular.module('myApp', [
                 controller:'profilCtrl'
             }
         );
+        $routeProvider.when('/twitch',
+            {
+                templateUrl:'partials/twitch.html',
+                controller:'twitchCtrl'
+            }
+        );
         $routeProvider.otherwise({redirectTo: '/Fumétoile/2442'});
     }]);

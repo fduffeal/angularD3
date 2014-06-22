@@ -35,4 +35,34 @@ angular.module('myApp.controllers', [])
             );
         }
     ])
+    .controller('twitchCtrl',['$scope','twitchApi',
+        function($scope,twitchApi){
+
+            var aStream = [];
+            twitchApi.getUser('Fumistar').then(function(data){
+                $scope.data = data;
+
+                for(var key in data.follows ){
+                    console.log(data.follows[key].channel.name);
+                    twitchApi.getStream(data.follows[key].channel.name).then(function(data){
+
+                        if(data.stream != null) {
+                            aStream.push(data);
+                        }
+                    });
+                }
+                $scope.aStrem = aStream;
+            });
+
+
+
+            $scope.streamName = "sc2daisy";
+            $scope.url = "hostname=www.twitch.tv&channel="+$scope.streamName+"&auto_play=false&start_volume=25";
+
+            twitchApi.getStream('sc2daisy').then(function(data){
+                $scope.stream = data;
+            });
+        }
+    ])
+
 ;

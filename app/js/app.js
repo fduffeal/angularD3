@@ -16,17 +16,18 @@ angular.module('myApp', [
                 controller:'heroCtrl'
             }
         );
+        $routeProvider.when('/twitch/:username',
+            {
+                templateUrl:'partials/twitch.html',
+                controller:'twitchCtrl'
+            }
+        );
         $routeProvider.when('/:battleTagName/:battleTagId',
             {
                 templateUrl:'partials/profil.html',
                 controller:'profilCtrl'
             }
         );
-        $routeProvider.when('/twitch',
-            {
-                templateUrl:'partials/twitch.html',
-                controller:'twitchCtrl'
-            }
-        );
+
         $routeProvider.otherwise({redirectTo: '/Fumétoile/2442'});
     }]);

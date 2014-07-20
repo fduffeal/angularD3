@@ -14,7 +14,7 @@ angular.module('myApp.services').service('d3Api',['$http',
         this.get = function(battletagName,battletagCode,heroId){
 
             var host = 'eu.battle.net';
-            var url = '/angularD3/proxy.php?url=http://'+ host + "/api/d3/profile/" + battletagName + "-" + battletagCode +"/hero/" + heroId;
+            var url = '/proxy.php?url=http://'+ host + "/api/d3/profile/" + battletagName + "-" + battletagCode +"/hero/" + heroId;
 
             var promise = $http({
                 method: 'GET',
@@ -28,7 +28,7 @@ angular.module('myApp.services').service('d3Api',['$http',
 
         this.getProfil = function(battletagName,battletagCode){
             var host = 'eu.battle.net';
-            var url = '/angularD3/proxy.php?url=http://'+ host + "/api/d3/profile/" + battletagName + "-" + battletagCode + '/';
+            var url = '/proxy.php?url=http://'+ host + "/api/d3/profile/" + battletagName + "-" + battletagCode + '/';
 
             var promise = $http({
                 method: 'GET',
@@ -46,7 +46,7 @@ angular.module('myApp.services').service('twitchApi',['$http',
     function($http){
 
         this.getUser = function(user){
-            var url = '/angularD3/proxy.php?url=https://api.twitch.tv/kraken/users/'+user+'/follows/channels';
+            var url = '/proxy.php?url=https://api.twitch.tv/kraken/users/'+user+'/follows/channels';
             var promise = $http({
                 method: 'GET',
                 url: url
@@ -58,7 +58,7 @@ angular.module('myApp.services').service('twitchApi',['$http',
         };
 
         this.getChannel = function(channelName){
-            var url = '/angularD3/proxy.php?url=https://api.twitch.tv/kraken/channel/'+channelName;
+            var url = '/proxy.php?url=https://api.twitch.tv/kraken/channel/'+channelName;
             var promise = $http({
                 method: 'GET',
                 url: url
@@ -70,7 +70,7 @@ angular.module('myApp.services').service('twitchApi',['$http',
         };
 
         this.getStream = function(name){
-            var url = '/angularD3/proxy.php?url=https://api.twitch.tv/kraken/streams/'+name+'/';
+            var url = '/proxy.php?url=https://api.twitch.tv/kraken/streams/'+name+'/';
             var promise = $http({
                 method: 'GET',
                 url: url
